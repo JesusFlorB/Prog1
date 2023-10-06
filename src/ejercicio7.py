@@ -7,10 +7,8 @@ def suma(numeroUNO,numeroDOS,numeroTRES):
 
 if __name__=="__main__":
     
-    #entrada
     numeroUNO = int(input("Escribe el primer numero: "))
     numeroDOS = int(input("Escribe el segundo numero: "))
     numeroTRES = int(input("Escribe el tercer numero: "))
     
-    #salida
     print (suma(numeroUNO,numeroDOS,numeroTRES))

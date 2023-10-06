@@ -9,5 +9,5 @@ if __name__=="__main__":
     
     precio = int(input("Escribe el precio del producto sin IVA: "))
     IVA = int(input("Escribe el IVA que se le aplicara al producto: "))
-
+    
     print (Total(precio,IVA))

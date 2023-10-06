@@ -18,6 +18,8 @@ from src.ejercicio21 import invertir_frase
 from src.ejercicio22 import frase_letra_modificada
 from src.ejercicio23 import cambiar_dominio_correo
 from src.ejercicio24 import obtener_euros_y_centimos
+
+
 #ejercicio1
 def test_saludo():
     assert saludo("jesus") == "hola jesus"
@@ -165,7 +167,6 @@ def test_cambiar_dominio_correo():
     
 #ejercicio24
 def test_obtener_euros_y_centimos():
-    # Prueba con un precio de ejemplo
     euros, centimos = obtener_euros_y_centimos(15.75)
     assert euros == 15
     assert centimos == 75

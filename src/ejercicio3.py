@@ -19,7 +19,7 @@ def valores(ancho,alto):
 
 if __name__=="__main__":
 
-#Valores
+#valores
     ancho = 17
     alto = 12.0
 
