@@ -4,6 +4,11 @@ from src.ejercicio3 import valores
 from src.ejercicio4 import temperatura
 from src.ejercicio5 import Total
 from src.ejercicio7 import suma
+
+from src.ejercicio9 import solicitar_numero, calcular_suma
+from io import StringIO
+import sys
+
 from src.ejercicio10 import resultadoOperacion
 from src.ejercicio11 import sumaEnteros
 from src.ejercicio12 import calculoIMC
@@ -56,6 +61,19 @@ def test_suma():
     numeroTRES = 9
     numerosSumados = numeroUNO + numeroDOS + numeroTRES
     assert suma(numeroUNO,numeroDOS,numeroTRES) == f"La suma de los tres numeros es {18}"
+    
+#ejercicio9
+def test_solicitar_numero(monkeypatch):
+    # Simulamos la entrada del usuario para el número 5.0
+    monkeypatch.setattr('sys.stdin', StringIO('5.0\n'))
+    resultado = solicitar_numero()
+    assert resultado == 5.0
+
+def test_calcular_suma(monkeypatch):
+    # Simulamos la entrada del usuario para los números 1.0, 2.0, 3.0
+    monkeypatch.setattr('sys.stdin', StringIO('1.0\n2.0\n3.0\n'))
+    resultado = calcular_suma()
+    assert resultado == 6.0
     
 #ejercicio10
 def test_operaciones():
