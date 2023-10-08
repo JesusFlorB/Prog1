@@ -3,7 +3,12 @@ from src.ejercicio2 import coste_servicio
 from src.ejercicio3 import valores
 from src.ejercicio4 import temperatura
 from src.ejercicio5 import Total
+from src.ejercicio6 import calcular_iva, calcular_importe_sin_iva
 from src.ejercicio7 import suma
+
+from src.ejercicio8 import obtener_tres_numeros, calcular_suma
+from io import StringIO
+import sys
 
 from src.ejercicio9 import solicitar_numero, calcular_suma
 from io import StringIO
@@ -54,6 +59,15 @@ def test_Total():
     Importe = precio * (1 + (IVA / 100))
     assert Total(precio,IVA) == f"El coste final es {110.00000000000001} euros"
     
+#ejercicio6
+def test_calcular_iva():
+    assert calcular_iva(100, 10) == 10.0
+    assert calcular_iva(200, 8) == 16.0
+
+def test_calcular_importe_sin_iva():
+    assert calcular_importe_sin_iva(100, 10) == 90.0
+    assert calcular_importe_sin_iva(200, 16) == 184.0
+    
 #ejercicio7
 def test_suma():
     numeroUNO = 3
@@ -61,6 +75,19 @@ def test_suma():
     numeroTRES = 9
     numerosSumados = numeroUNO + numeroDOS + numeroTRES
     assert suma(numeroUNO,numeroDOS,numeroTRES) == f"La suma de los tres numeros es {18}"
+    
+#ejercicio8
+def test_obtener_tres_numeros(monkeypatch):
+    #simulamos la entrada del usuario para los números 1, 2 y 3
+    monkeypatch.setattr('sys.stdin', StringIO('1\n2\n3\n'))
+    resultado = obtener_tres_numeros()
+    assert resultado == [1, 2, 3]
+
+def test_calcular_suma():
+    numeros = [1, 2, 3]
+    resultado = calcular_suma(numeros)
+    assert resultado == 6
+
     
 #ejercicio9
 def test_solicitar_numero(monkeypatch):

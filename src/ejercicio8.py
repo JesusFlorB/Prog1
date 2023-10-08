@@ -1,19 +1,23 @@
 """Escribir el programa del ejercicio 1.7 usando solamente dos variables diferentes"""
 
 
-while 1: 
-    try:
-        #lista vacia para guardar los numeros que ingrese el usuario
-        num = []
-        #ciclo for para capturar los numeros
-        for i in range(3):
-            #pedir al usuario ingresar los numeros
-            numeros = int(input("Por favor introduce tres numeros: ")) 
-            #guardar cada numero en la lista
-            num.append(numeros)
-        sumaNumeros = sum(num)
-        print(sumaNumeros)
-        exit()
-    except ValueError:
-    #enviar alerta cuando el usuario introduzca un valor incorrecto
-        print("ERROR. Introduzca un numero de tipo entero")
+def obtener_tres_numeros():
+    num = []  #lista vacía para guardar los números ingresados por el usuario
+    for i in range(3):
+        while True:
+            try:
+                numeros = int(input("Por favor introduce tres numeros: "))
+                num.append(numeros)
+                break  #salir del bucle si el usuario ingresó un número válido
+            except ValueError:
+                print("ERROR. Introduzca un número de tipo entero")
+    return num
+
+def calcular_suma(lista_numeros):
+    suma_numeros = sum(lista_numeros)
+    return suma_numeros
+
+if __name__ == "__main__":
+    numeros = obtener_tres_numeros()
+    suma_numeros = calcular_suma(numeros)
+    print(suma_numeros)

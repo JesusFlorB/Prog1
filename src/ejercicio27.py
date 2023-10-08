@@ -14,7 +14,7 @@ def main():
     #calcular el costo total
     costo_total = calcular_costo_total(precio_unitario, numero_unidades)
 
-    #formatear la salida(en este caso le decimos al programa que queremos que se muestre el nombre del producto 
+    #formatear la salida(le decimos al programa que queremos que se muestre el nombre del producto 
     #seguido de su precio unitario con 6 dígitos enteros y 2 decimales, el número de unidades con tres dígitos 
     # y el coste total con 8 dígitos enteros y 2 decimales)
     resultado = f"Nombre del producto: {nombre_producto}\n" \
